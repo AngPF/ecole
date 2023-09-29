@@ -9,12 +9,7 @@ import java.util.List;
 
 public class InstrutorService implements Service<Instrutor, Long> {
 
-    private InstrutorRepository repository;
-
-    public InstrutorService(){
-        repository = InstrutorRepository.of();
-    }
-
+    private InstrutorRepository repository = InstrutorRepository.build();
     @Override
     public List<Instrutor> findAll() {
         return repository.findAll();

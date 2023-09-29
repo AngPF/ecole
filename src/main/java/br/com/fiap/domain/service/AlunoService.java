@@ -11,12 +11,8 @@ import java.util.regex.Pattern;
 
 public class AlunoService implements Service<Aluno, Long> {
 
-    private AlunoRepository repository;
 
-    public AlunoService(){
-        repository = AlunoRepository.of();
-    }
-
+    private AlunoRepository repository = AlunoRepository.build();
 
     @Override
     public List<Aluno> findAll() {
@@ -62,5 +58,7 @@ public class AlunoService implements Service<Aluno, Long> {
         var matricula = LocalDate.now().getYear() + "." + r.nextInt(1000, 9999) + "-" + r.nextInt(10, 99);
         return matricula;
     }
+
+
 
 }

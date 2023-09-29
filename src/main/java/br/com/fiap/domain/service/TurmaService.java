@@ -9,12 +9,7 @@ import java.util.List;
 
 public class TurmaService implements Service<Turma, Long> {
 
-    private TurmaRepository repository;
-
-    public TurmaService(){
-        repository = TurmaRepository.of();
-    }
-
+    TurmaRepository repository = TurmaRepository.build();
     @Override
     public List<Turma> findAll() {
         return repository.findAll();

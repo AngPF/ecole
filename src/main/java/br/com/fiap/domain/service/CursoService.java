@@ -9,11 +9,7 @@ import java.util.List;
 
 public class CursoService implements Service<Curso, Long>{
 
-    private CursoRepository repository;
-
-    public CursoService(){
-        repository = CursoRepository.of();
-    }
+    private CursoRepository repository = CursoRepository.build();
 
     @Override
     public List<Curso> findAll() {
